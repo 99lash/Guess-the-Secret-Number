@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 
 
@@ -30,13 +31,13 @@ srand(time(0));
         printf("Enter your guess : ");
         scanf("%i", &userguess);
         attempt++;
-        if(userguess < 1 || userguess > 100){
-            printf("Invalid! Please guess only between 1-100\n\n");
+        if(userguess < 1 || userguess > numsize){
+            printf("Invalid! Please guess only between 1-%i\n\n", numsize);
         }
         else{
             if(attempt == 1){
                 numsizetransfer = numsize;
-                maxsecretnum = (numsizetransfer/4) * 3;
+                maxsecretnum = (numsizetransfer/4) * ceil(2.5);
                 minsecretnum = (numsizetransfer/4) * 1;
                 //printf("25%%: %i\n", minsecretnum);
                 minsecretnum = (numsize - minsecretnum);
