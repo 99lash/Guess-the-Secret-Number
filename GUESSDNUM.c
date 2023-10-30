@@ -11,7 +11,7 @@
 //AND YUNG 25% NG 120 AY 30.!!!!!!!!!
 
 
-//REMOVE THE SINGLE-LINE COMMENT FOR DEMO :))
+//REMOVE THE SINGLE-LINE COMMENTS FOR DEMO :))
 
 int main()
 {
@@ -22,16 +22,16 @@ srand(time(0));
 
     printf("Enter your preferred limit size of guessing (e.g 50): ");
     scanf("%i", &numsize);
-    secretnum = (rand() % numsize)+1;
+    secretnum = (rand() % numsize) +1;
 
     printf("Guess the secret number between 1-%i\n\n", numsize);
     //printf("%i\n", secretnum);
-    while(attempt != 100){
+    while(attempt != numsize){
         printf("Enter your guess : ");
         scanf("%i", &userguess);
         attempt++;
-        if(userguess < 1 || userguess > 100){
-            printf("Invalid! Please guess only between 1-100\n\n");
+        if(userguess < 1 || userguess > numsize){
+            printf("Invalid! Please guess only between 1-%i\n\n", numsize);
         }
         else{
             if(attempt == 1){
