@@ -56,7 +56,9 @@ srand(time(0));
                 }
             }
             if(userguess == secretnum){
-                printf("You won!\n"); break;
+                printf("You won!\n");
+                printf("Total attempts : %i", attempt);
+                break;
             }
             else if(userguess < secretnum){
                 printf("Try again. Higher!\n\n");
