@@ -37,7 +37,7 @@ srand(time(0));
         else{
             if(attempt == 1){
                 numsizetransfer = numsize;
-                maxsecretnum = (numsizetransfer/4) * ceil(2.5);
+                maxsecretnum = (numsizetransfer/4) * 3;
                 minsecretnum = (numsizetransfer/4) * 1;
                 //printf("25%%: %i\n", minsecretnum);
                 minsecretnum = (numsize - minsecretnum);
