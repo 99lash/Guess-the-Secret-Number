@@ -13,46 +13,57 @@
 
 //REMOVE THE SINGLE-LINE COMMENTS FOR DEMO :))
 
+/*int rematt(int x)
+{
+ int remainingAttempts = remainingAttempts - x;
+
+}
+DISABLED 
+*/
 int main()
 {
 
-int attempt = 0, chance, userguess, secretnum, maxsecretnum, minsecretnum, numsize, numsizetransfer;
+int attempt = 0, userguess, secretnum, maxsecretnum, minsecretnum, numsize, chance, remainingAttempts = 100;
 
 srand(time(0));
 
     printf("Enter your preferred limit size of guessing (e.g 50): ");
     scanf("%i", &numsize);
     secretnum = (rand() % numsize) +1;
-
+    printf("%i\n", secretnum); //REMOVE TO REVEAL THE SECRET NUMBER
     printf("Guess the secret number between 1-%i\n\n", numsize);
-    //printf("%i\n", secretnum);
+    
     while(attempt != numsize){
         printf("Enter your guess : ");
         scanf("%i", &userguess);
         attempt++;
+        printf("\nAttempt Counter : %i\n", attempt);
+        remainingAttempts = rematt(attempt);
+        //DISABLED printf("\t\t\t\tremaining attempts %i", remainingAttempts);
         if(userguess < 1 || userguess > numsize){
             printf("Invalid! Please guess only between 1-%i\n\n", numsize);
         }
         else{
             if(attempt == 1){
-                numsizetransfer = numsize;
-                maxsecretnum = (numsizetransfer/4) * 3;
-                minsecretnum = (numsizetransfer/4) * 1;
-                //printf("25%%: %i\n", minsecretnum);
+                chance = (numsize/4);
+                maxsecretnum = (chance * 3);
+                minsecretnum = (chance * 1);
+                //printf("25%%: %i\n", minsecretnum); 
                 minsecretnum = (numsize - minsecretnum);
-                //printf("75%%: %i\n", maxsecretnum);
-                /*printf("25%%: %i\n", minsecretnum);*/
+                //printf("75%%: %i\n", maxsecretnum); 
+                /*printf("25%%: %i\n", minsecretnum); DON'T MIND THIS*/ 
 
                 if(secretnum <= maxsecretnum){
-                    maxsecretnum = secretnum + numsize/4;
+                    maxsecretnum = secretnum + (numsize / 4);
                     //printf("max : %i\n", maxsecretnum);
                 }
                 else if(secretnum >= minsecretnum && secretnum <= numsize){
-                    minsecretnum = (secretnum - numsize/4);
+                    minsecretnum = secretnum - (numsize / 4);
                     //printf("min : %i\n", minsecretnum);
                 }
                 if(userguess <= maxsecretnum && userguess >= secretnum || userguess >= minsecretnum && userguess <= secretnum){
-                    printf("You have won with the 25% chance of winning!");
+                    printf("You have won with 25%% chance of winning!");
+                    break;
                 }
             }
             if(userguess == secretnum){
