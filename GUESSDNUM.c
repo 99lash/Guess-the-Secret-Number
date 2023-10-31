@@ -27,12 +27,13 @@ int attempt = 0, userguess, secretnum, maxsecretnum, minsecretnum, numsize;
 float chance;
 
 srand(time(0));
+numsize = 100; //numsize is fixed for now, remove all the code in this line if necessary
 
-    printf("Enter your preferred limit size of guessing (e.g 50): ");
-    scanf("%i", &numsize);
+    //printf("Enter your preferred limit size of guessing (e.g 50): ");
+    //scanf("%i", &numsize);
     secretnum = (rand() % numsize) +1;
     printf("Secret Number : %i\n", secretnum); //REMOVE TO REVEAL THE SECRET NUMBER
-    printf("Guess the secret number between 1-%i\n\n", numsize);
+    //printf("Guess the secret number between 1-%i\n\n", numsize);
     
     while(attempt != numsize){
         printf("Enter your guess : ");
