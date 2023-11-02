@@ -33,12 +33,13 @@ numsize = 100; //numsize is fixed for now, remove all the code in this line if n
     //scanf("%i", &numsize);
     secretnum = (rand() % numsize) +1;
     printf("Secret Number : %i\n", secretnum); //REMOVE TO REVEAL THE SECRET NUMBER
-    //printf("Guess the secret number between 1-%i\n\n", numsize);
+    printf("Guess the secret number between 1-%i\n\n", numsize);
     
     while(attempt != numsize){
         printf("Enter your guess : ");
         scanf("%i", &userguess);
-        attempt++;
+        attempt++;    
+
         /*DISABLED, under construction!
         printf("\nAttempt Counter : %i\n", attempt); 
         remainingAttempts = rematt(attempt);
@@ -70,19 +71,22 @@ numsize = 100; //numsize is fixed for now, remove all the code in this line if n
                     break;
                 }
             }
-            if(userguess == secretnum){
+            if (userguess == secretnum){
                 printf("You won!\n");
-                printf("Total attempts : %i", attempt);
+                printf("Answer : %i\n", secretnum);
+                printf("Guess attempts : %i\n", attempt);
                 break;
-            }
+            }                
             else if(userguess < secretnum){
                 printf("Try again. Higher!\n\n");
             }
             else if(userguess > secretnum){
                 printf("Try again. Lower!\n\n");
             }
+            
         }
     }
-
+    
+    
 return 0;
 }
