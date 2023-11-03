@@ -59,11 +59,11 @@ numsize = 100; //numsize is fixed for now, remove all the code in this line if n
                 /*printf("25%%: %i\n", minsecretnum); NEW BOUNDARY, DON'T MIND THIS*/ 
 
                 if(secretnum <= maxsecretnum){
-                    maxsecretnum = secretnum + (numsize / 4);
+                    maxsecretnum = secretnum + (numsize / 4) - 1;
                     //printf("max : %i\n", maxsecretnum);
                 }
                 else if(secretnum >= minsecretnum && secretnum <= numsize){
-                    minsecretnum = secretnum - (numsize / 4);
+                    minsecretnum = secretnum - (numsize / 4) + 1;
                     //printf("min : %i\n", minsecretnum);
                 }
                 if(userguess <= maxsecretnum && userguess >= secretnum || userguess >= minsecretnum && userguess <= secretnum){
