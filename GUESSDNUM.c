@@ -51,9 +51,9 @@ numsize = 100; //numsize is fixed for now, remove all the code in this line if n
         else{
             if(attempt == 1){
                 chance = (numsize/4);
-                maxsecretnum = (ceil(chance) * 3);
+                maxsecretnum = (chance) * 3 + 1;
                 printf("75%%: %i\n", maxsecretnum); 
-                minsecretnum = (floor(chance) * 1);
+                minsecretnum = (chance) * 1;
                 printf("25%%: %i\n", minsecretnum); 
                 minsecretnum = (numsize - minsecretnum);
                 /*printf("25%%: %i\n", minsecretnum); NEW BOUNDARY, DON'T MIND THIS*/ 
