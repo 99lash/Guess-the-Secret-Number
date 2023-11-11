@@ -1,5 +1,4 @@
 *.vscode
 *.json
 *.txt
-*GUESSDNUM.c
-*GUESSDNUM.exe
+app/GUESSDNUM.C
