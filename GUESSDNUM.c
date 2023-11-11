@@ -26,8 +26,10 @@ int main()
 int attempt = 0, userguess, secretnum, maxsecretnum, minsecretnum, numsize;
 float chance;
 
-srand(time(0));
 numsize = 100; //numsize is fixed for now, remove all the code in this line if necessary
+
+srand(time(0));
+
 
     //printf("Enter your preferred limit size of guessing (e.g 50): ");
     //scanf("%i", &numsize);
@@ -51,20 +53,22 @@ numsize = 100; //numsize is fixed for now, remove all the code in this line if n
         else{
             if(attempt == 1){
                 chance = (numsize/4);
-                maxsecretnum = (chance) * 3 + 1;
-                printf("75%%: %i\n", maxsecretnum); 
-                minsecretnum = (chance) * 1;
+                
+                minsecretnum = chance;
                 printf("25%%: %i\n", minsecretnum); 
-                minsecretnum = (numsize - minsecretnum);
-                /*printf("25%%: %i\n", minsecretnum); NEW BOUNDARY, DON'T MIND THIS*/ 
+
+                maxsecretnum = (chance * 3) + 1;
+                printf("75%%: %i\n", maxsecretnum - 1); 
+                minsecretnum = (numsize - minsecretnum); 
+                //printf("25%%: %i\n", minsecretnum + 1); 
 
                 if(secretnum <= maxsecretnum){
                     maxsecretnum = secretnum + (numsize / 4) - 1;
-                    //printf("max : %i\n", maxsecretnum);
+                    printf("max : %i\n", maxsecretnum);
                 }
                 else if(secretnum >= minsecretnum && secretnum <= numsize){
                     minsecretnum = secretnum - (numsize / 4) + 1;
-                    //printf("min : %i\n", minsecretnum);
+                    printf("min : %i\n", minsecretnum);
                 }
                 if(userguess <= maxsecretnum && userguess >= secretnum || userguess >= minsecretnum && userguess <= secretnum){
                     printf("You have won with 25%% chance of winning!");
