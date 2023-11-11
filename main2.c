@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main()
+void hintIdentifier()
 {
 
+}
+
+int main()
+{
     int secretNumber, userGuess, chance;
     int attempts = 0, numSize = 100;
     int minRange_SecretNum, maxRange_SecretNum, boundaryDecision;
@@ -12,8 +16,7 @@ int main()
     //generate secret number
     secretNumber = (rand() % numSize) + 1;
     printf("Secret Number : %d\n", secretNumber);
-    printf("Guess the secret number in between 1 - %d\n",numSize);
-    
+    printf("Guess the secret number in between 1 - %d\n",numSize); 
     do{
         printf("Enter your guess : ");
         scanf("%d", &userGuess);
@@ -48,7 +51,6 @@ int main()
                 printf("Higher\n\n");
             }
             }
-        
     }while (userGuess != secretNumber && attempts != numSize);
     if(userGuess == secretNumber){
         printf("\n=========\n");
@@ -58,6 +60,5 @@ int main()
         }
     else if(attempts == numSize) 
     printf("You've ran out of attempts");
-
 return 0;
 }
